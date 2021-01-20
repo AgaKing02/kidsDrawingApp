@@ -9,6 +9,7 @@
     <com.example.kidsdrawingapp.DrawingView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/background_drawing_view_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
