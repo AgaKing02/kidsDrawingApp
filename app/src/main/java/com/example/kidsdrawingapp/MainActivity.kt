@@ -1,22 +1,59 @@
 package com.example.kidsdrawingapp
 
 import android.app.Dialog
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         drawing_view.setSizeForBrush(20.toFloat())
+        val black=findViewById(R.id.black_color)as Button;
+        val yellow=findViewById(R.id.yellow_color)as Button;
+        val red=findViewById(R.id.red_color)as Button;
+        val green=findViewById(R.id.green_color)as Button;
+        val pink=findViewById(R.id.pink_color)as Button;
+        val blue=findViewById(R.id.blue_color)as Button;
+        val purple=findViewById(R.id.purple_color)as Button;
 
         ib_brush.setOnClickListener {
             showBrushSizeChooserDialog()
         }
+        black.setOnClickListener {
+            changeColor(Color.BLACK);
+        }
+        yellow.setOnClickListener {
+          changeColor(Color.YELLOW);
+        }
+        red.setOnClickListener {
+          changeColor(Color.RED);
+        }
+        green.setOnClickListener {
+           changeColor(Color.GREEN);
+        }
+        pink.setOnClickListener {
+       changeColor(Color.parseColor("#9805B1"));
+        }
+        blue.setOnClickListener {
+           changeColor(Color.BLUE);
+        }
+        purple.setOnClickListener {
+            changeColor(Color.parseColor("#E600FF"));
+        }
+
+
+    }
+    private fun changeColor(color:Int){
+        drawing_view.setColorForBrush(color)
     }
 
     private fun showBrushSizeChooserDialog() {
