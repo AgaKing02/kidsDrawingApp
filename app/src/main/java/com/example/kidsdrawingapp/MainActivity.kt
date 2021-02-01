@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
 
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val pink=findViewById(R.id.pink_color)as Button;
         val blue=findViewById(R.id.blue_color)as Button;
         val purple=findViewById(R.id.purple_color)as Button;
+        val eraser=findViewById(R.id.eraser) as ImageButton;
 
         ib_brush.setOnClickListener {
             showBrushSizeChooserDialog()
@@ -48,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         }
         purple.setOnClickListener {
             changeColor(Color.parseColor("#E600FF"));
+        }
+        eraser.setOnClickListener{
+            changeColor(Color.WHITE);
         }
 
 

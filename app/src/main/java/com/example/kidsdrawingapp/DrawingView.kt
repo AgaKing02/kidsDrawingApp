@@ -9,7 +9,6 @@ import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 
-@SuppressLint("NewApi")
 class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var mDrawPath: CustomPath? = null
     private var mCanvasBitmap: Bitmap? = null
